@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.box {
+    background: linear-gradient(180deg, rgb(255 255 255) 0%, rgb(159 163 165 / 23%) 98%, #051111 100%);
+}
+.main-container {
+    max-width: 1300px;
+    height: 600px;
+    margin: 0 auto;
+    padding-top: 200px;
+    
+}
+.title {
+    float: left;
+    transition: 0.2s;
+}
+
+.vroculus {
+    float: right;
+}
+.oculus{
+    height: 350px;
+    transition: 0.5s;
+}
+.oculus:hover{
+    transform: translate(10px, 5px);
+}
+nav {
+    float: left;
+}
+nav ul {
+    list-style: none;
+    position: fixed;
+    padding-left: 15px;
+}
+
+nav ul a{
+    text-decoration: none;
+}
+
+.navPage {
+    height: 25px;
+    width: 25px;
+    margin-bottom: 10px;
+    border: 1px rgb(214, 214, 214) solid;
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+.navPage:hover {
+    background-color: rgba(34, 32, 163, 0.596);
+    border: 1px rgb(255, 255, 255) solid;
+
+}
+
+
+.info {
+    background-image: url(img/vrworld.jpg);
+    background-repeat: no-repeat;
+    padding-top: 10px;
+
+}
+.container {
+    height: 600px;
+    max-width: 1300px;
+    height: 600px;
+    margin: 0 auto;
+    padding-top: 200px;
+}
+.oqRealidade {
+    background-color: #464646;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    border-radius: 50px 50px 0px 0px;
+    width: 900px;
+    margin: 0 auto;
+}
+.txt-page {
+    background-color: rgb(255 255 255 / 48%);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: larger;
+    margin: 0 auto;
+    width: 930px;
+}
