@@ -2,30 +2,6 @@ body {
     margin: 0;
     padding: 0;
 }
-.box {
-    background: linear-gradient(180deg, rgb(255 255 255) 0%, rgb(159 163 165 / 23%) 98%, #051111 100%);
-}
-.main-container {
-    max-width: 1300px;
-    height: 600px;
-    margin: 0 auto;
-    padding-top: 200px;
-    
-}
-.title {
-    float: left;
-    transition: 0.2s;
-}
-.vroculus {
-    float: right;
-}
-.oculus{
-    height: 350px;
-    transition: 0.5s;
-}
-.oculus:hover{
-    transform: translate(10px, 5px);
-}
 nav {
     float: left;
     margin-top: 20px;
@@ -33,10 +9,25 @@ nav {
 nav ul {
     list-style: none;
     position: fixed;
-    padding-left: 15px;
+    padding-left: 10px;
 }
 nav ul a{
     text-decoration: none;
+}
+.navnext {
+    height: 60px;
+    padding: 5px;
+    float: right;
+    background-color: #f3f3f3;
+    border-radius: 0px 0px 10px 10px;
+}
+.navnext ul {
+    margin: 0px;
+}
+.navnext li {
+    display: inline-block;
+    margin-right: 40px;
+    font-size: larger;
 }
 .navPage {
     height: 25px;
@@ -55,44 +46,71 @@ nav ul a{
     margin-bottom: 9px;
 
 }
-.info {
-    background-image: url(img/vrworld.jpg);
-    background-repeat: no-repeat;
-    padding-top: 10px;
-
-}
-.container {
-    height: 600px;
-    max-width: 1430px;
-    margin: 0 auto;
-    padding-top: 200px;
-}
 .containerNav {
-    max-width: 1410px;
+    max-width: 1420px;
     margin: 0 auto;
-
 }
-.oqRealidade {
-    background-color: #131313;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.logo {
+    width: 100px;
+}
+.main-container {
+    max-width: 1300px;
+    padding-bottom: 700px;
+    margin: 0 auto;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.bg-vr {
+    padding-top: 220px;
     padding-left: 50px;
-    border-top: 1px #20805e solid;
-    border-radius: 50px 50px 0px 0px;
-    width: 900px;
-    margin: 0 auto;
 }
-.txt-page {
-    background-color: rgb(70 70 70 / 76%);
-    border-radius: 5px;
-    padding: 10px;
-    font-size: x-large;
-    margin: 0 auto;
-    width: 930px;
-    color: aliceblue;
+.oculus{
+    height: 350px;
+    transition: 0.5s;
 }
-.txt-page p {
-    margin-left: 15px;
-    margin-right: 15px;
+.oculus:hover{
+    transform: translate(7px, 3px);
+}
+.info {
+    margin-top: 250px;
+    width: 400px;
+}
+.noticia {
+    margin-top: 50px
+}
+.imagemCard {
+    width: 600px;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 1px #d0d0d0 solid;
+}
+.card {
+    background-color: #efefef;
+    width: 600px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px 0px grey;
+    transition: 0.3s;
+}
+.Pnews {
+    border-radius: 15px 15px 5px 5px;
+}
+.Pnews:hover {
+    box-shadow: 0px 8px 12px 0px grey;
+}
+.news {
+    padding: 5px;
+}
+.minicard {
+    width: 60px;
+    float: left;
+}
+.div-text {
+        color: black;
+        font-size: larger;
+}
+.margin {
+    text-align: center;
 }
