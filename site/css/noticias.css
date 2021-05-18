@@ -1,0 +1,107 @@
+.nav-news {
+    height: 60px;
+    padding: 5px;
+    text-align: center;
+    background-color: #f3f3f3;
+    border-radius: 0px 0px 10px 10px;
+}
+.nav-news ul {
+    padding: 0;
+    margin: 0;
+}
+.noticias {
+    width: 940px;
+}
+.img-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+}
+.img-container:hover {
+    cursor: pointer;
+    color: rgb(150, 150, 150);
+}
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size: x-large;
+}
+.thumb {
+    width: 100%; 
+    border-radius: 15px;
+    transition: 0.3s;
+}
+.thumb:hover {
+    transform: scale(0.995, 0.995);
+}
+.card-line {
+    background-color: #f3f3f3;
+    border: 1px grey solid;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+.card-line:hover {
+    transform: scale(0.995, 0.995);
+    border: 1px rgb(116, 159, 194) solid;
+    color: rgb(116, 159, 194);
+}
+.info-user {
+    width: 340px;
+    padding-bottom: 10px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    border: 1px grey solid;
+}
+#user_img {
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    border: 1px grey solid;
+    background-color: white;
+    background-repeat: round;
+}
+#user_name {
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 5px;
+}
+.historico-user {
+    max-width: 300px;
+    margin: 0 auto;
+}
+#logout {
+    text-align: center;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#logout:hover {
+    background-color: rgb(255, 76, 32)
+}
+.testar {
+    max-width: 310px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #e2e2e2;
+    border-radius: 10px;
+    color: black;
+}
+.testar ul {
+    padding: 0;
+    list-style: none;
+}
+.img-card {
+    height: 150px;
+    transition: 0.3s;
+}
+.img-card:hover {
+    transform: scale(0.99, 0.99);
+}
