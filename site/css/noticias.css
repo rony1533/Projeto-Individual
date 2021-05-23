@@ -3,7 +3,7 @@
     padding: 5px;
     text-align: center;
     background-color: #f3f3f3;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 50% 50%;
 }
 .nav-news ul {
     padding: 0;
@@ -42,6 +42,7 @@
     border-radius: 10px;
     padding: 15px;
     margin-bottom: 5px;
+    cursor: pointer;
     transition: 0.3s;
 }
 .card-line:hover {
@@ -52,15 +53,14 @@
 .info-user {
     width: 340px;
     padding-bottom: 10px;
-    background-color: #f3f3f3;
+    background-color: #808080;
     border-radius: 10px;
-    border: 1px grey solid;
 }
 #user_img {
-    width: 300px;
+    width: 200px;
     height: 200px;
     margin: 0 auto;
-    border: 1px grey solid;
+    border-radius: 0 0 5px 5px;
     background-color: white;
     background-repeat: round;
 }
@@ -68,31 +68,73 @@
     font-size: xx-large;
     text-align: center;
     margin-top: 5px;
+    margin-bottom: 5px;
+    color: wheat;
 }
 .historico-user {
     max-width: 300px;
     margin: 0 auto;
+    border-radius: 5px;
+    border: 1px wheat solid;
+    background-color: #525252;
+    color: wheat;
+    padding: 5px;
 }
 #logout {
     text-align: center;
     background-color: red;
     color: white;
-    border: none;
     border-radius: 5px;
+    border: none;
+    margin-left: 235px;
     padding: 5px;
     cursor: pointer;
     transition: 0.3s;
 }
 #logout:hover {
-    background-color: rgb(255, 76, 32)
+    background-color: rgb(255, 76, 32);
+}
+.ranking {
+    background-color: gray;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.rank-opc {
+    background-color: #525252;
+    color: wheat;
+    border-radius: 5px;
+}
+.ul-rank {
+    padding: 0;
+    margin-top: 0;
+    list-style: none;
+}
+.ul-rank li {
+    display: inline;
+    margin-left: 27px;
+    margin-right: 27px;
+}
+.list-rank {
+    background-color: #525252;
+    color: wheat;
+    border-radius: 5px;
+    max-width: 320px;
+    min-height: 120px;
+    margin: 0 auto;
+    padding: 5px;
+}
+.maxW-rank {
+    max-width: 290px;
+    margin: 0 auto;
 }
 .testar {
     max-width: 310px;
     margin: 0 auto;
     text-align: center;
-    background-color: #e2e2e2;
-    border-radius: 10px;
-    color: black;
+    background-color: #525252;
+    border-radius: 5px 10px 5px 10px;
+    color: wheat;
 }
 .testar ul {
     padding: 0;
@@ -104,4 +146,7 @@
 }
 .img-card:hover {
     transform: scale(0.99, 0.99);
+}
+.white {
+    color: white;
 }
