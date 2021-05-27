@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/form.css">
+
+    <title>Login</title>
+</head>
+
+<body>
+
+    <form id="form_login">
+
+        <div class="container">
+            <h1>Login</h1>
+
+            <label for="usuario"><b>Email</b></label>
+            <input type="text" placeholder="Email" name="email" required>
+
+            <label for="senha"><b>Senha</b></label>
+            <input type="text" placeholder="insira uma senha" name="senha" required>
+
+            <div>
+                <button type="button" onclick="entrar()">Entrar</button>
+            </div>
+            <div id="div_erro" class="msg_erro">
+            </div>
+        </div>
+
+    </form>
+
+</body>
+
+</html>
+
+<script>
+
+    function entrar() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.email_usuario_meuapp = json.email;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'noticias.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    // function aguardar() {
+    //     btn_entrar.disabled = true;
+    //     img_aguarde.style.visibility = 'visible';
+    //     div_erro.style.visibility = 'hidden';
+    // }
+
+    // function finalizar_aguardar(resposta) {
+    //     btn_entrar.disabled = false;
+    //     img_aguarde.style.visibility = 'hidden';
+    //     div_erro.style.visibility = 'visible';
+    //     div_erro.innerHTML = resposta;
+    // }
+
+</script>

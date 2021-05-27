@@ -127,13 +127,7 @@
     margin: 0 auto;
     max-width: 1150px;
 }
-.footer {
-    background-color: #f7f7f7;
-    padding: 15px;
-    border-top: 1px #d0d0d0 solid;
-    text-align: center;
-    font-size: large;
-}
+
 .grey {
     background-color: #e0e0e0;
 }

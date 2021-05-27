@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.blue {
+    color: blue ;
+}
+
+.containerNav {
+    max-width: 1440px;
+    min-height: 100px;
+    margin: 0 auto;
+}
+.username {
+    background-color: #0009b7;
+    border: 1px #dcdcdc solid;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.nav-left {
+    float: left;
+    height: 60px;
+    padding-top: 10px;
+    background-color: #f3f3f3;
+    border-radius: 0px 0px 10px 0px;
+}
+.nav-left ul {
+    margin: 0px;
+    padding-left: 10px;
+}
+.nav-left li {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: larger;
+}
+.nav-right {
+    height: 60px;
+    padding: 5px;
+    float: right;
+    background-color: #f3f3f3;
+    border-radius: 0px 0px 0px 10px;
+}
+.nav-right ul {
+    margin: 0px;
+    padding-left: 10px;
+}
+.nav-right li {
+    display: inline-block;
+    margin-right: 40px;
+    font-size: larger;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: rgb(126, 126, 126);
+}
+.logo {
+    width: 100px;
+}
+.main-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}

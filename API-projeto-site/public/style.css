@@ -1,0 +1,142 @@
+.social {
+    height: 45px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.social:hover {
+    transform: scale(0.97, 0.97);
+}
+.padding {
+    padding-bottom: 610px;
+}
+
+.bg-vr {
+    padding-top: 70px;
+}
+.oculus {
+    height: 460px;
+    transition: 0.5s;
+}
+
+.info {
+    margin-top: 100px;
+    width: 570px;
+    text-align: center;
+}
+.info p {
+    font-size: xx-large;
+    color: black;
+}
+.btn {
+    color: white;
+    font-size: 30px;
+    width: 80%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+.btn-green {
+    background-color: rgb(28, 185, 28);
+}
+.btn-green:hover {
+    background-color: rgb(67, 228, 67);
+    color: rgb(230, 253, 230);
+}
+.btn-blue {
+    background-color: rgb(28, 101, 185);
+}
+.btn-blue:hover {
+    background-color: rgb(67, 169, 228);
+    color: rgb(230, 245, 253);
+}
+.noticia {
+    height: 770px;
+}
+.link-news {
+    color: black;
+    font-size: larger;
+    background: whitesmoke;
+    padding: 15px;
+}
+.link-news a {
+
+    text-decoration: none;
+    color: white;
+    background-color: #d6d6cb;
+    padding: 3px;
+    border-radius: 5px;
+
+}
+.imagemCard {
+    width: 600px;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 1px #d0d0d0 solid;
+}
+.card {
+    background-color: #efefef;
+    width: 600px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px 0px grey;
+    transition: 0.3s;
+}
+.Pnews {
+    border-radius: 15px 15px 5px 5px;
+}
+.Pnews:hover {
+    box-shadow: 0px 8px 12px 0px grey;
+    background-color: #f7f7f7;
+}
+.news {
+    padding: 20px;
+    padding: 15px;
+    margin-bottom: 35px;
+    border-radius: 10px;
+}
+.news:hover {
+    box-shadow: 0px 8px 12px 0px grey;
+    background-color: #f7f7f7;
+}
+.minicard {
+    width: 60px;
+    float: left;
+    border-radius: 5px;
+    border: 1px #a0a0a0 solid;
+}
+.div-text {
+        color: black;
+        font-size: larger;
+}
+.margin {
+    text-align: center;
+}
+.testar ul li{
+    display: inline-block;
+}
+.test-card {
+    width: 250px;
+
+    padding: 5px;
+    transition: 0.3s;
+}
+.test-card:hover {
+    box-shadow: 0px 0px 2px 1px grey;
+}
+.card-container {
+    margin: 0 auto;
+    max-width: 1150px;
+}
+.footer {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-top: 1px #d0d0d0 solid;
+    text-align: center;
+    font-size: large;
+}
+.grey {
+    background-color: #e0e0e0;
+}
+.txt-center {
+    text-align: center;
+}

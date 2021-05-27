@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/noticias.css">
+
+    <script type="text/javascript" src="funcoes.js"></script>
+    <title>Noticias</title>
+</head>
+
+<body onload="atualizacaoPeriodica()">
+
+    <div class="containerNav">
+
+        <div class="nav-news">
+
+
+            <ul>
+                <li>
+                    <a href="#">
+                        <img class="logo" src="logo1.PNG" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div id="home">
+
+        <div class="main-container">
+
+            <div class="float-left noticias">
+
+                <div class="img-container">
+                    <a href="pg-noticia.html">
+                        <img src="img/news/htcpro.PNG" alt="" class="thumb">
+                        <div class="bottom-left">
+                            <p class="white">HTC anuncia novos headsets de realidade virtual da linha Vive, agora com
+                                resolução 5K</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card-line">
+                    <h2>NFT: artista vende casa virtual como criptoarte por US$ 500 mil</h2>
+                </div>
+                <div class="card-line">
+                    <h2>Oculus Quest 2 é o novo headset VR do Facebook de US$ 299</h2>
+                </div>
+
+                <div class="card-line">
+                    <h2>Apple pode lançar modelo de óculos VR em 2022</h2>
+                </div>
+
+                <div class="card-line">
+                    <h2>Apple VR terá resolução 8K e um preço caríssimo, diz rumor</h2>
+                </div>
+
+                <button class="btn-more">Ver mais</button>
+
+            </div>
+
+            <div class="float-right">
+
+                <div class="info-user">
+                    <div id="user_img" style="background-image: url('img/vr-glasses.png');"></div>
+                    <div>
+                        <div id="user_name">
+                            <b id="b_usuario"></b>
+                        </div>
+                        <div class="historico-user">
+                            <p>
+                                Noticias Lidas: <b>0</b> <br>
+                                Pontos: <b>0</b>
+                            </p>
+                            <a href="index.html">
+                                <button id="logout" onclick="logoff()">Deslogar</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ranking">
+                    <div class="rank-opc">
+                        <ul class="ul-rank">
+                            <li> <b>Rank Global</b> </li>
+                        </ul>
+                    </div>
+
+                    <div class="list-rank">
+                        <div class="maxW-rank">
+                            <p style="margin: 0; float: left;" id="rank_nome">
+                                <b>Nome:</b> <br><br>
+                                <b>1° Rony Sobral</b> <br>
+                                <b>2° Breno Cesar</b> <br>
+                                <b>3° Erick</b> <br>
+                                <b>4° Danilo</b>
+                            </p>
+                            <p style="margin: 0; float: right;" id="id="rank_pontos"">
+                                <b>Pontuação</b> <br><br>
+                                <b>1000</b> <br>
+                                <b>500</b> <br>
+                                <b>100</b> <br>
+                                <b>50</b> <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testar">
+
+                    <h2>Teste o seu VR</h2>
+
+                    <div>
+
+                        <ul>
+                            <li class="float-left">
+                                <div class="test-card">
+
+                                    <a href="https://immersive-web.github.io/webxr-samples/inline-session.html">
+                                        <img src="img/teste/teste1.png" alt="" class="img-card">
+                                    </a>
+
+                                </div>
+                            </li>
+                            <li class="float-right">
+                                <div class="test-card">
+
+                                    <a href="https://immersive-web.github.io/webxr-samples/room-scale.html">
+                                        <img src="img/teste/teste2.png" alt="" class="img-card">
+                                    </a>
+
+                                </div>
+                            </li>
+                            <li class="float-left">
+                                <div class="test-card">
+
+                                    <a href="https://immersive-web.github.io/webxr-samples/input-tracking.html">
+                                        <img src="img/teste/teste3.png" alt="" class="img-card">
+                                    </a>
+
+                                </div>
+                            </li>
+                            <li class="float-right">
+                                <div class="test-card">
+
+                                    <a href="https://immersive-web.github.io/webxr-samples/tests/pointer-painter.html">
+                                        <img src="img/teste/teste4.png" alt="" class="img-card">
+                                    </a>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
+<script>
+    let usuario;
+
+    verificar_autenticacao();
+
+
+   // só altere aqui se souber o que está fazendo!
+   function atualizarTela(dados, idcaminhao) {
+        console.log('iniciando atualização da tela...');
+
+        // escolhendo qual alterar
+        var div_temperatura_alterar
+        var div_umidade_alterar
+
+        if (idcaminhao == 1) {
+            div_temperatura_alterar = div_temperatura
+            div_umidade_alterar = div_umidade
+        } else if (idcaminhao == 2) {
+            div_temperatura_alterar = div_temperatura2
+            div_umidade_alterar = div_umidade2
+        } else if (idcaminhao == 3) {
+            div_temperatura_alterar = div_temperatura3
+            div_umidade_alterar = div_umidade3
+        } else if (idcaminhao == 4) {
+            div_temperatura_alterar = div_temperatura4
+            div_umidade_alterar = div_umidade4
+        }
+
+        div_temperatura_alterar.innerHTML = `Temperatura: ${dados.temperatura}º`;
+
+        div_umidade_alterar.innerHTML = `Umidade: ${dados.umidade}%`; 
+
+    }
+
+</script>

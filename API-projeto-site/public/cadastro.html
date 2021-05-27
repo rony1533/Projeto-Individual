@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/form.css">
+
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+
+
+    <form id="form_cadastro">
+
+        <div class="container">
+            <h1>Cadastro</h1>
+
+            <label for="nome"><b>Nome de Usuário</b></label>
+            <input type="text" placeholder="nome de usuário" name="nome">
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Email" name="email">
+
+            <label for="senha"><b>Senha</b></label>
+            <input type="text" placeholder="insira uma senha" name="senha">
+
+            <p>Ao criar essa conta você aceitará os nossos <a href="#" style="color: dodgerblue;">Termos de
+                    Privacidade</a>.</p>
+            <div>
+                <button type="button" onclick="cadastrar()">Cadastrar</button>
+                ps:.Será enviado noticias mensais sobre a realidade virtual para o seu email.
+            </div>
+            <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+                Erro no cadastro
+            </div>
+        </div>
+
+    </form>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function cadastrar() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+
+                window.location.href = 'login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    // function aguardar() {
+    //     btn_entrar.disabled = true;
+    //     img_aguarde.style.display='block';
+    //     div_erro.style.display='none';
+    // }
+
+    // function finalizar_aguardar() {
+    //     btn_entrar.disabled = false;
+    //     img_aguarde.style.display='none';
+    //     div_erro.style.display='block';
+    // }
+
+</script>
