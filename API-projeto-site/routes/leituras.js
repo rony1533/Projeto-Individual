@@ -54,17 +54,19 @@ router.get('/ultimas/:idcaminhao', function(req, res, next) {
 });
 
 
-router.get('/tempo-real/:idcaminhao', function(req, res, next) {
+router.get('/noticias', function(req, res, next) {
 	console.log('Recuperando caminhões');
 	
-	//var idcaminhao = req.body.idcaminhao; // depois de .body, use o nome (name) do campo em seu formulário de login
-	var idcaminhao = req.params.idcaminhao;
+	//var idDados = req.body.idDados; // depois de .body, use o nome (name) do campo em seu formulário de login
+	var idDados = req.params.idDados;
 	
 	let instrucaoSql = "";
 	
 	if (env == 'dev') {
 		// abaixo, escreva o select de dados para o Workbench
-		instrucaoSql = `select temperatura, umidade, DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, fkcaminhao from leitura where fkcaminhao = ${idcaminhao} order by id desc limit 1`;
+		instrucaoSql = `select idDados, count(favorito) as oculus, favorito from usuario join estatisticas on fkDados = 1 where idDados = 1;
+						select idDados, count(favorito) as valve, favorito from usuario join estatisticas on fkDados = 2 where idDados = 2;
+						select idDados, count(favorito) as playstation, favorito from usuario join estatisticas on fkDados = 3 where idDados = 3;`;
 	} else if (env == 'production') {
 		// abaixo, escreva o select de dados para o SQL Server
 		instrucaoSql = `select top 1 temperatura, umidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, fkcaminhao from leitura where fkcaminhao = ${idcaminhao} order by id desc`;
@@ -82,6 +84,35 @@ router.get('/tempo-real/:idcaminhao', function(req, res, next) {
 		res.status(500).send(erro.message);
 	});
 });
+
+// router.get('/tempo-real/:idDados', function(req, res, next) {
+// 	console.log('Recuperando caminhões');
+	
+// 	//var idDados = req.body.idDados; // depois de .body, use o nome (name) do campo em seu formulário de login
+// 	var idDados = req.params.idDados;
+	
+// 	let instrucaoSql = "";
+	
+// 	if (env == 'dev') {
+// 		// abaixo, escreva o select de dados para o Workbench
+// 		instrucaoSql = `select temperatura, umidade, DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, fkcaminhao from leitura where fkcaminhao = ${idcaminhao} order by id desc limit 1`;
+// 	} else if (env == 'production') {
+// 		// abaixo, escreva o select de dados para o SQL Server
+// 		instrucaoSql = `select top 1 temperatura, umidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, fkcaminhao from leitura where fkcaminhao = ${idcaminhao} order by id desc`;
+// 	} else {
+// 		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
+// 	}
+	
+// 	console.log(instrucaoSql);
+	
+// 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
+// 	.then(resultado => {
+// 		res.json(resultado[0]);
+// 	}).catch(erro => {
+// 		console.error(erro);
+// 		res.status(500).send(erro.message);
+// 	});
+// });
 
 // estatísticas (max, min, média, mediana, quartis etc)
 router.get('/estatisticas', function (req, res, next) {

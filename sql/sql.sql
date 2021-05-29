@@ -1,47 +1,48 @@
-create database tecnews;
-use tecnews;
+create database vrnews;
+use vrnews;
 
+create table estatisticas (
+	idDados	int primary key auto_increment,
+    favorito	char(14),
+    check(favorito = 'Oculus' or favorito = 'Playstation VR' or favorito = 'VALVE')
+);
 create table usuario (
-	id	int	primary key auto_increment,
-	nome	varchar(16),
-	email	varchar(32),
-	senha	varchar(16)
-)auto_increment = 1000;
-
-create table noticia (
 	id	int primary key auto_increment, 
-	titulo		varchar(64), 
-	img			varchar(128), 
-	texto		varchar(8000), 
-	autor		varchar(20)
+	fkDados	int,
+	foreign key (fkDados) references estatisticas(idDados),
+	nome varchar(42), 
+	email varchar(42), 
+	senha varchar(16)
+);
+create table noticia (
+	idnoticia	int primary key auto_increment, 
+	titulo varchar(64), 
+    texto	varchar(900), 
+    autor	varchar(25)
+);
+create table historico (
+	idhistorico	int	primary key auto_increment,
+    fknoticia	int, 
+    foreign key (fknoticia) references noticia(idnoticia),
+    fkusuario	int,
+    foreign key (fkusuario) references usuario(id),
+    dataLida	datetime, 
+    pontuacao	int
 );
 
-create table rank (
-	id		int primary key auto_increment, 
-	fkusuario	int,
-	foreign key (fkusuario) references usuario(id),
-	fknoticia	int,
-	foreign key (fknoticia) references noticia(id),
-	noticias_lidas	int, 
-	pontos	int
-);
+insert into estatisticas(idDados, favorito) 
+			values (null, 'Oculus'),
+					(null, 'VALVE'),
+                    (null, 'Playstation VR');
 
-insert into usuario (id, nome, email, senha) 
-		VALUES (null,'Rony','ronyalves@gmail.com','25481179'),
-				(null,'Pedro','pedro21@hotmail.com','6544456'),
-				(null,'Breno','breno@outlook.com','12246487');
+select * from estatisticas;
 
-select * from usuario;
+select * from usuario; 
 
-insert into noticia (id, titulo, img, texto, autor) 
-		VALUES (null, 'Pessoas não sabem diferenciar', '', 'A diferenciação é baseada no blalbalbalbalba', 'Thais'),
-				(null, 'Hoje em dia as Pessoas não se', '', 'No mundo moderno blalbalbalbalba', 'Rodrigo');
+select idDados, nome,  favorito from usuario join estatisticas on fkDados = 3 where idDados = 3;
 
-select * from noticia;
+select * from usuario join estatisticas on fkDados = 3 where idDados = 3;
 
-insert into rank (id, fkusuario, fknoticia, noticias_lidas, pontos) 
-		VALUES (null, 1003, 2, 1, 150);
-
-select * from rank;
-
-select usuario.email ,noticias_lidas, pontos from rank join usuario on fkusuario = usuario.id where usuario.email = 'breno@outlook.com'; 
+select idDados, count(favorito) as oculus, favorito from usuario join estatisticas on fkDados = 1 where idDados = 1;
+select idDados, count(favorito) as valve, favorito from usuario join estatisticas on fkDados = 2 where idDados = 2;
+select idDados, count(favorito) as playstation, favorito from usuario join estatisticas on fkDados = 3 where idDados = 3;

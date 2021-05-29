@@ -7,6 +7,7 @@
 }
 .nav-news ul {
     padding: 0;
+    list-style: none;
     margin: 0;
 }
 .noticias {
@@ -16,17 +17,17 @@
     position: relative;
     text-align: center;
     color: white;
-    border-radius: 5px;
-}
-.img-container:hover {
-    cursor: pointer;
-    color: rgb(150, 150, 150);
+    border-radius: 5px;cursor: pointer;
 }
 .bottom-left {
     position: absolute;
     bottom: 8px;
     left: 16px;
     font-size: x-large;
+}
+.bottom-left p:hover {
+    color: #525252;
+    transition: 0.3s;
 }
 .thumb {
     width: 100%; 
@@ -53,7 +54,7 @@
 .info-user {
     width: 340px;
     padding-bottom: 10px;
-    background-color: #808080;
+    background-color: #353535;
     border-radius: 10px;
 }
 #user_img {
@@ -71,7 +72,7 @@
     margin-bottom: 5px;
     color: wheat;
 }
-.historico-user {
+.user-off {
     max-width: 300px;
     margin: 0 auto;
     border-radius: 5px;
@@ -79,61 +80,27 @@
     background-color: #525252;
     color: wheat;
     padding: 5px;
+    text-align: center;
 }
 #logout {
     text-align: center;
-    background-color: red;
-    color: white;
+    background-color: #525252;
+    color: wheat;
     border-radius: 5px;
     border: none;
-    margin-left: 235px;
-    padding: 5px;
+    width: 100%;
     cursor: pointer;
     transition: 0.3s;
+    padding: 2px;
 }
 #logout:hover {
     background-color: rgb(255, 76, 32);
-}
-.ranking {
-    background-color: gray;
-    margin-top: 10px;
-    padding: 5px;
-    border-radius: 5px;
-}
-.rank-opc {
-    background-color: #525252;
-    color: wheat;
-    border-radius: 5px;
-}
-.ul-rank {
-    padding: 5;
-    margin-top: 0;
-    list-style: none;
-    text-align: center;
-}
-.ul-rank li {
-    display: inline;
-    margin-left: 27px;
-    margin-right: 27px;
-}
-.list-rank {
-    background-color: #525252;
-    color: wheat;
-    border-radius: 5px;
-    max-width: 320px;
-    min-height: 120px;
-    margin: 0 auto;
-    padding: 5px;
-}
-.maxW-rank {
-    max-width: 290px;
-    margin: 0 auto;
 }
 .testar {
     max-width: 310px;
     margin: 0 auto;
     text-align: center;
-    background-color: #525252;
+    background-color: #353535;
     border-radius: 5px 10px 5px 10px;
     color: wheat;
 }
@@ -154,8 +121,9 @@
 .btn-more {
     width: 100%;
     padding: 15px;
+    margin-bottom: 5px;
     color: wheat;
-    background-color: rgb(82, 82, 82);
+    background-color: #353535;
     border: none;
     border-radius: 15px;
     font-size: x-large;
@@ -165,4 +133,16 @@
 .btn-more:hover {
     color: white;
     background-color: rgb(117, 117, 117);
+}
+.estatistica {
+    text-align: center;
+    color: wheat;
+    background-color: #353535;
+    margin-top: 10px;
+    border: 1px #353535 solid;
+    border-radius: 10px;
+    padding: 10px 0px;
+}
+.mx-w340 {
+    max-width: 340px;
 }

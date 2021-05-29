@@ -28,11 +28,18 @@
             <label for="senha"><b>Senha</b></label>
             <input type="text" placeholder="insira uma senha" name="senha">
 
+            <label for="fkDados"><b>Qual empresa tem o seu VR favorito:</b></label> <br>
+            <select name="fkDados">
+				<option value="">-Selecione-</option>
+                <option value="1">Oculus</option>
+                <option value="2">VALVE</option>
+                <option value="3">PlayStation VR</option>
+            </select>
+
             <p>Ao criar essa conta você aceitará os nossos <a href="#" style="color: dodgerblue;">Termos de
                     Privacidade</a>.</p>
             <div>
                 <button type="button" onclick="cadastrar()">Cadastrar</button>
-                ps:.Será enviado noticias mensais sobre a realidade virtual para o seu email.
             </div>
             <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
                 Erro no cadastro
@@ -66,7 +73,7 @@
                 response.text().then(function (resposta) {
                     div_erro.innerHTML = resposta;
                 });
-                finalizar_aguardar();
+                // finalizar_aguardar();
             }
         });
 

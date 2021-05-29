@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- script do google charts -->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+        <!-- scripts do Chart.js -->
+        <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+        <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
+
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/noticias.css">
 
@@ -12,7 +20,7 @@
     <title>Noticias</title>
 </head>
 
-<body onload="atualizacaoPeriodica()">
+<body>
 
     <div class="containerNav">
 
@@ -66,53 +74,24 @@
 
             </div>
 
-            <div class="float-right">
+            <div class="float-right mx-w340">
 
                 <div class="info-user">
                     <div id="user_img" style="background-image: url('img/vr-glasses.png');"></div>
                     <div>
-                        <div id="user_name">
-                            <b id="b_usuario"></b>
-                        </div>
-                        <div class="historico-user">
-                            <p>
-                                Noticias Lidas: <b>0</b> <br>
-                                Pontos: <b>0</b>
-                            </p>
+                        <div id="user_name"><b id="b_usuario"></b></div>
+                        <div class="user-off">
                             <a href="index.html">
-                                <button id="logout" onclick="logoff()">Deslogar</button>
+                                <button id="logout">Deslogar</button>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="ranking">
-                    <div class="rank-opc">
-                        <ul class="ul-rank">
-                            <li> <b>Rank Global</b> </li>
-                        </ul>
-                    </div>
-
-                    <div class="list-rank">
-                        <div class="maxW-rank">
-                            <p style="margin: 0; float: left;" id="rank_nome">
-                                <b>Nome:</b> <br><br>
-                                <b>1° Rony Sobral</b> <br>
-                                <b>2° Breno Cesar</b> <br>
-                                <b>3° Erick</b> <br>
-                                <b>4° Danilo</b>
-                            </p>
-                            <p style="margin: 0; float: right;" id="id="rank_pontos"">
-                                <b>Pontuação</b> <br><br>
-                                <b>1000</b> <br>
-                                <b>500</b> <br>
-                                <b>100</b> <br>
-                                <b>50</b> <br>
-                            </p>
-                        </div>
-                    </div>
+                <div class="estatistica">
+                    Empresas que os Usuários preferem mais:
+                    <canvas id="chart_pizza"></canvas>
                 </div>
-
                 <div class="testar">
 
                     <h2>Teste o seu VR</h2>
@@ -178,32 +157,31 @@
     verificar_autenticacao();
 
 
-   // só altere aqui se souber o que está fazendo!
-   function atualizarTela(dados, idcaminhao) {
-        console.log('iniciando atualização da tela...');
+    var ctx = chart_pizza.getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['VIVE', 'Oculus', 'PlayStation VR'],
+            datasets: [{
+                
+                data: [19, 25, 10],
+                backgroundColor: [
+                    
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
 
-        // escolhendo qual alterar
-        var div_temperatura_alterar
-        var div_umidade_alterar
+                ],
+                borderColor: [
+                    'rgba(53, 162, 235, 1)',
+                    'rgba(254, 206, 86, 1)',
+                    'rgba(74, 192, 192, 1)'
+                ],
+                borderWidth: 1,
+                hoverOffset: 0.5
 
-        if (idcaminhao == 1) {
-            div_temperatura_alterar = div_temperatura
-            div_umidade_alterar = div_umidade
-        } else if (idcaminhao == 2) {
-            div_temperatura_alterar = div_temperatura2
-            div_umidade_alterar = div_umidade2
-        } else if (idcaminhao == 3) {
-            div_temperatura_alterar = div_temperatura3
-            div_umidade_alterar = div_umidade3
-        } else if (idcaminhao == 4) {
-            div_temperatura_alterar = div_temperatura4
-            div_umidade_alterar = div_umidade4
-        }
-
-        div_temperatura_alterar.innerHTML = `Temperatura: ${dados.temperatura}º`;
-
-        div_umidade_alterar.innerHTML = `Umidade: ${dados.umidade}%`; 
-
-    }
+            }]
+        },
+    });
 
 </script>

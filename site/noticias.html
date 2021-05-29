@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js" integrity="sha512-dnUg2JxjlVoXHVdSMWDYm2Y5xcIrJg1N+juOuRi0yLVkku/g26rwHwysJDAMwahaDfRpr1AxFz43ktuMPr/l1A==" crossorigin="anonymous"></script>
+    <title>Document</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/noticias.css">
     <title>Noticias</title>
 </head>
 
-<body >
+<body>
 
     <div class="containerNav">
 
@@ -36,12 +38,13 @@
             <div class="float-left noticias">
 
                 <div class="img-container">
-                <a href="pg-noticia.html">
-                    <img src="img/news/htcpro.PNG" alt="" class="thumb">
-                    <div class="bottom-left">
-                        <p class="white">HTC anuncia novos headsets de realidade virtual da linha Vive, agora com resolução 5K</p>
-                    </div>
-                </a>
+                    <a href="pg-noticia.html">
+                        <img src="img/news/htcpro.PNG" alt="" class="thumb">
+                        <div class="bottom-left">
+                            <p class="white">HTC anuncia novos headsets de realidade virtual da linha Vive, agora com
+                                resolução 5K</p>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="card-line">
@@ -75,8 +78,11 @@
                             </a>
                         </div>
                     </div>
+                </div>
 
-
+                <div class="estatistica">
+                    Empresas que os Usuários preferem mais:
+                    <canvas id="chart_pizza"></canvas>
                 </div>
 
                 <div class="testar">
@@ -138,3 +144,31 @@
 </body>
 
 </html>
+<script> 
+var ctx = chart_pizza.getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['VIVE', 'Oculus', 'PlayStation VR'],
+            datasets: [{
+                
+                data: [19, 25, 10],
+                backgroundColor: [
+                    
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+
+                ],
+                borderColor: [
+                    'rgba(53, 162, 235, 1)',
+                    'rgba(254, 206, 86, 1)',
+                    'rgba(74, 192, 192, 1)'
+                ],
+                borderWidth: 1,
+                hoverOffset: 0.5
+
+            }]
+        },
+    });
+</script>
