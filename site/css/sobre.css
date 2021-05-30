@@ -1,44 +1,4 @@
 .box {
-    height: 590px;
+    min-height: 590px;
     margin-top: 50px;
-}
-.card {
-    float: left;
-    width: 700px;
-    padding: 0px 10px;
-    border-radius: 20px 5px 20px 5px;
-    font-size: x-large;
-    box-shadow: 0 4px 8px 0 rgb(186 240 255);
-    background-color: #00bfe4;
-    color: #ffffff;
-}
-.div-card {
-    float: right;
-    color: white;
-    background-color: #00bfe4;
-    box-shadow: 0 4px 8px 0 rgb(98 225 255);
-    width: 30%;
-    text-align: center;
-}
-.img-card {
-    transition: 0.3s;
-    margin-bottom: 20px;
-    border-radius: 0px 0px 15px 15px;
-} 
-.txt {
-    font-size: 25px;
-    padding: 5px 0px;
-    margin-bottom: 10px;
-    border-radius: 20px 20px 0px 0px;
-}
-.img {
-    width: 100%;
-    border-radius: 0px 0px 20px 20px;
-}
-.titulo {
-    padding: 5px 15px;
-}
-.banner {
-    background-image: url('../img/banner.png');
-    height: 550px;
 }

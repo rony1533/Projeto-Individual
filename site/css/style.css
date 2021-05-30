@@ -1,11 +1,4 @@
-.social {
-    height: 45px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-.social:hover {
-    transform: scale(0.97, 0.97);
-}
+
 .padding {
     padding-bottom: 610px;
 }

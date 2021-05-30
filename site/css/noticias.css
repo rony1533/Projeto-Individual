@@ -24,7 +24,7 @@
     left: 16px;
     font-size: x-large;
 }
-.bottom-left p:hover {
+.img-container:hover p {
     color: #525252;
     transition: 0.3s;
 }
