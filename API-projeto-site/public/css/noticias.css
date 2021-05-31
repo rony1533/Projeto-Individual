@@ -146,3 +146,15 @@
 .mx-w340 {
     max-width: 340px;
 }
+.btn {
+    color: wheat;
+    text-transform: uppercase;
+    padding: 5px;
+    cursor: pointer;
+    background-color: rgb(82 82 82);
+    border: 1px wheat solid;
+}
+.btn-now {
+    border: 3px solid #232323;
+    background-color: orangered;
+}

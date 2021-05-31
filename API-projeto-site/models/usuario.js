@@ -28,6 +28,11 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
+		perfil: {
+			field: 'perfil',
+			type: DataTypes.INTEGER,
+			allowNull: false
+		},
 		fkDados: {
 			field: 'fkDados',
 			type: DataTypes.INTEGER,

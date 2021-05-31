@@ -1,5 +1,6 @@
 let email_usuario;
 let nome_usuario;
+let perfil_usuario;
 
 function redirecionar_login() {
     window.location.href = 'index.html';

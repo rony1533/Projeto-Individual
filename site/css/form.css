@@ -35,13 +35,28 @@ button:hover {
 .container {
     padding: 16px;
     margin: 0 auto;
-    margin-top: 10%;
     max-width: 500px;
     background-color: whitesmoke;
     border: 1px grey solid;
     border-radius: 5px;
     box-shadow: 0px 1px 18px 2px #b7b7b7;
 }
+.margin {
+    margin-top: 2%;
+}
+.margin10 {
+    margin-top: 10%;
+}
 form {
     transition: 0.3s linear;
+}
+.perfil {
+    width: 100px;
+    border: 1px grey solid;
+}
+.div-perfil {
+    background-color: #c5c5c5;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
 }

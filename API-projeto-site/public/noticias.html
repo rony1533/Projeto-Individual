@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- script do google charts -->
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    
-        <!-- scripts do Chart.js -->
-        <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
-        <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
+    <!-- script do google charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- scripts do Chart.js -->
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+    <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
+
+    <script data-jsd-embedded data-key="a6afdef9-c9d8-4acf-959f-645b4c774107"
+        data-base-url="https://jsd-widget.atlassian.com"
+        src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
 
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/noticias.css">
@@ -20,7 +24,7 @@
     <title>Noticias</title>
 </head>
 
-<body>
+<body onload="atualizacaoPeriodica()">
 
     <div class="containerNav">
 
@@ -77,7 +81,7 @@
             <div class="float-right mx-w340">
 
                 <div class="info-user">
-                    <div id="user_img" style="background-image: url('img/vr-glasses.png');"></div>
+                    <div id="user_img" style="background-image: url('img/perfil1.png');"></div>
                     <div>
                         <div id="user_name"><b id="b_usuario"></b></div>
                         <div class="user-off">
@@ -156,32 +160,50 @@
 
     verificar_autenticacao();
 
+    var img_perfil = ['img/perfil1.png', 'img/perfil2.png', 'img/perfil3.png'];
 
-    var ctx = chart_pizza.getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ['VIVE', 'Oculus', 'PlayStation VR'],
-            datasets: [{
-                
-                data: [19, 25, 10],
-                backgroundColor: [
-                    
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)'
+    function grafico() {
 
-                ],
-                borderColor: [
-                    'rgba(53, 162, 235, 1)',
-                    'rgba(254, 206, 86, 1)',
-                    'rgba(74, 192, 192, 1)'
-                ],
-                borderWidth: 1,
-                hoverOffset: 0.5
+        var vive = parseInt((Math.random() * 100) + 1);
+        var oculus = parseInt((Math.random() * 100) + 1);
+        var play = parseInt((Math.random() * 100) + 1);
 
-            }]
-        },
-    });
+        var ctx = chart_pizza.getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['VIVE', 'Oculus', 'PlayStation VR'],
+                datasets: [{
+
+                    data: [vive, oculus, play],
+                    backgroundColor: [
+
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+
+                    ],
+                    borderColor: [
+                        'rgba(53, 162, 235, 1)',
+                        'rgba(254, 206, 86, 1)',
+                        'rgba(74, 192, 192, 1)'
+                    ],
+                    borderWidth: 1,
+
+                }]
+            },
+        });
+
+
+
+    }
+
+    // só mexer se quiser alterar o tempo de atualização
+    // ou se souber o que está fazendo!
+    function atualizacaoPeriodica() {
+        grafico();
+        setTimeout(atualizacaoPeriodica, 9000);
+    }
+
 
 </script>

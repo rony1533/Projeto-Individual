@@ -17,7 +17,7 @@
 
     <form id="form_cadastro">
 
-        <div class="container">
+        <div class="container margin">
             <h1>Cadastro</h1>
 
             <label for="nome"><b>Nome de Usuário</b></label>
@@ -28,6 +28,23 @@
 
             <label for="senha"><b>Senha</b></label>
             <input type="text" placeholder="insira uma senha" name="senha">
+
+            <label for="perfil">Selecione uma imagem de perfil:</label>
+            <select name="perfil">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <div class="div-perfil">
+                <b>1.</b>
+                <img src="img/perfil1.png" alt="" class="perfil">
+                <b>2.</b>
+                <img src="img/perfil2.png" alt="" class="perfil">
+                <b>3.</b>
+                <img src="img/perfil3.png" alt="" class="perfil">
+            </div>
+            <br>
+           
 
             <label for="fkDados"><b>Qual empresa tem o seu VR favorito:</b></label> <br>
             <select name="fkDados">

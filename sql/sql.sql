@@ -10,6 +10,8 @@ create table usuario (
 	id	int primary key auto_increment, 
 	fkDados	int,
 	foreign key (fkDados) references estatisticas(idDados),
+	perfil int,
+	check(perfil = 1 or perfil = 2 or perfil = 3),
 	nome varchar(42), 
 	email varchar(42), 
 	senha varchar(16)
