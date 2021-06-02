@@ -71,3 +71,18 @@ a:hover {
 .float-right {
     float: right;
 }
+.social {
+    height: 45px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.social:hover {
+    transform: scale(0.97, 0.97);
+}
+.footer {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-top: 1px #d0d0d0 solid;
+    text-align: center;
+    font-size: large;
+}

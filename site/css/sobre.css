@@ -2,3 +2,39 @@
     min-height: 590px;
     margin-top: 50px;
 }
+.card-sobre {
+    float: right;
+    width: 850px;
+    background-color: #353535;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: x-large;
+    color: white;
+}
+.card-img {
+    float: left;
+    height: 315px;
+    background-color: #353535;
+    margin: 0 auto;
+    width: 292px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.texto {
+    text-align: center;
+    background-color: #353535;
+    padding: 2px;
+    width: 150px;
+    color: white;
+    border-radius: 0px 0px 10px 10px;
+}
+.imagem1 {
+    position: absolute;
+    margin-left: 856px;
+    margin-top: -280px;
+}
+.imagem2 {
+    position: absolute;
+    margin-left: 180px;
+    margin-top: -91px;
+}

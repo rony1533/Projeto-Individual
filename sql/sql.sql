@@ -45,6 +45,6 @@ select idDados, nome,  favorito from usuario join estatisticas on fkDados = 3 wh
 
 select * from usuario join estatisticas on fkDados = 3 where idDados = 3;
 
-select idDados, count(favorito) as oculus, favorito from usuario join estatisticas on fkDados = 1 where idDados = 1;
-select idDados, count(favorito) as valve, favorito from usuario join estatisticas on fkDados = 2 where idDados = 2;
-select idDados, count(favorito) as playstation, favorito from usuario join estatisticas on fkDados = 3 where idDados = 3;
+select idDados, count(favorito) as qtdPessoas, favorito from usuario join estatisticas on fkDados = 1 where idDados = 1;
+select idDados, count(favorito) as qtdPessoas, favorito from usuario join estatisticas on fkDados = 2 where idDados = 2;
+select idDados, count(favorito) as qtdPessoas, favorito from usuario join estatisticas on fkDados = 3 where idDados = 3;

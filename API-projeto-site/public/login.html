@@ -24,10 +24,11 @@
             <input type="text" placeholder="insira uma senha" name="senha" required>
 
             <div>
-                <button type="button" onclick="entrar()">Entrar</button>
+                <div id="div_erro" class="msg_erro">
+                </div>
+                <button type="button" onclick="entrar()" id="btn_entrar">Entrar</button>
             </div>
-            <div id="div_erro" class="msg_erro">
-            </div>
+
         </div>
 
     </form>
@@ -39,7 +40,7 @@
 <script>
 
     function entrar() {
-        // aguardar();
+        aguardar();
         var formulario = new URLSearchParams(new FormData(form_login));
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -70,17 +71,16 @@
         return false;
     }
 
-    // function aguardar() {
-    //     btn_entrar.disabled = true;
-    //     img_aguarde.style.visibility = 'visible';
-    //     div_erro.style.visibility = 'hidden';
-    // }
+    function aguardar() {
+        btn_entrar.disabled = true;
+        div_erro.style.visibility = 'hidden';
+    }
 
-    // function finalizar_aguardar(resposta) {
-    //     btn_entrar.disabled = false;
-    //     img_aguarde.style.visibility = 'hidden';
-    //     div_erro.style.visibility = 'visible';
-    //     div_erro.innerHTML = resposta;
-    // }
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        div_erro.style.visibility = 'visible';
+        div_erro.style.color = 'red';
+        div_erro.innerHTML = resposta;
+    }
 
 </script>

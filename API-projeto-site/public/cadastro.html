@@ -12,8 +12,6 @@
 
 <body>
 
-
-
     <form id="form_cadastro">
 
         <div class="container margin">
@@ -23,10 +21,10 @@
             <input type="text" placeholder="nome de usuário" name="nome">
 
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Email" name="email" id="email">
+            <input type="text" placeholder="Email" name="email" id="inpt_email">
 
             <label for="senha"><b>Senha</b></label>
-            <input type="text" placeholder="insira uma senha" name="senha" id="senha">
+            <input type="text" placeholder="insira uma senha" name="senha" id="inpt_senha">
 
             <label for="perfil">Selecione uma imagem de perfil:</label>
             <select name="perfil">
@@ -56,11 +54,11 @@
             <p>Ao criar essa conta você aceitará os nossos <a href="#" style="color: dodgerblue;">Termos de
                     Privacidade</a>.</p>
             <div>
+                <div id="div_erro"
+                    style="text-align: center; background-color: sandybrown; color: maroon; display: none;"></div>
                 <button type="button" onclick="cadastrar()">Cadastrar</button>
             </div>
-            <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
-                Erro no cadastro
-            </div>
+
         </div>
 
     </form>
@@ -73,40 +71,59 @@
 <script>
 
     function cadastrar() {
-        // aguardar();
-        var formulario = new URLSearchParams(new FormData(form_cadastro));
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            body: formulario
-        }).then(function (response) {
+        aguardar();
 
-            if (response.ok) {
+        var email = inpt_email.value;
+        var senha = inpt_senha.value;
 
-                window.location.href = 'login.html';
+        if (email != '' && senha != '') {
+
+            ax_login = email.endsWith('@gmail.com') || email.endsWith('@hotmail.com') || email.endsWith('@outlook.com');
+            ax_senha = senha.length;
+
+            if (ax_login && ax_senha >= 6) {
+
+                var formulario = new URLSearchParams(new FormData(form_cadastro));
+
+                fetch("/usuarios/cadastrar", {
+                    method: "POST",
+                    body: formulario
+                }).then(function (response) {
+
+                    if (response.ok) {
+
+                        window.location.href = 'login.html';
+
+                    } else {
+
+                        console.log('Erro de cadastro!');
+                        response.text().then(function (resposta) {
+                            div_erro.innerHTML = resposta;
+                        });
+                        finalizar_aguardar();
+                    }
+                });
+
+                return false;
 
             } else {
-
-                console.log('Erro de cadastro!');
-                response.text().then(function (resposta) {
-                    div_erro.innerHTML = resposta;
-                });
-                // finalizar_aguardar();
+                div_erro.style.display = 'block';
+                div_erro.innerHTML = `Verifique se o E-mail está correto ou se a senha tem mais de 6 caracteres`;
             }
-        });
 
-        return false;
+        } else {
+            div_erro.style.display = 'block';
+            div_erro.innerHTML = `Os campos estão vazios!!`;
+        }
+
     }
 
-    // function aguardar() {
-    //     btn_entrar.disabled = true;
-    //     img_aguarde.style.display='block';
-    //     div_erro.style.display='none';
-    // }
+    function aguardar() {
+        div_erro.style.display = 'none';
+    }
 
-    // function finalizar_aguardar() {
-    //     btn_entrar.disabled = false;
-    //     img_aguarde.style.display='none';
-    //     div_erro.style.display='block';
-    // }
-
+    function finalizar_aguardar() {
+        div_erro.style.display = 'block';
+    }
+    
 </script>

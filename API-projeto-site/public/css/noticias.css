@@ -19,15 +19,15 @@
     color: white;
     border-radius: 5px;cursor: pointer;
 }
+.img-container:hover p {
+    color: #525252;
+    transition: 0.3s;
+}
 .bottom-left {
     position: absolute;
     bottom: 8px;
     left: 16px;
     font-size: x-large;
-}
-.bottom-left p:hover {
-    color: #525252;
-    transition: 0.3s;
 }
 .thumb {
     width: 100%; 
